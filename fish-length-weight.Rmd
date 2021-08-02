@@ -1,0 +1,51 @@
+---
+title: "eds-212-day-1"
+author: "Felicia Cruz"
+date: "8/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+# Big Header 
+
+## Medium
+
+### Small
+*this is italics*
+
+**this is bold**
+
+this is a superscript~3~
+
+* bullet 1 
+* bullet 2 
+* bullet 3
+
+![Alt text] 
+(/feliciacruz/Desktop/sunset.jpg)
+
+
+```{r}
+stand_weight <- function(a,b,L){
+  a*(L^b)
+}
+```
+
+```{r}
+fish_length <- seq(from = 0, to = 200, by = 1)
+
+baracuda_weight <- stand_weight(0.0181, 3.27, fish_length)
+
+bar_len_and_weight <- data.frame(fish_length, baracuda_weight)
+
+ggplot(data = bar_len_and_weight, aes(x=fish_length, y=baracuda_weight)) +
+  geom_point() + 
+  labs(x = "Length (cm)",
+       y = "Weight (g)",
+       title = "Baracuda weight based on its length")
+```
+
